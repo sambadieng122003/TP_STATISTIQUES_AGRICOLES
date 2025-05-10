@@ -1,0 +1,136 @@
+---
+title: " "
+output:
+  word_document:
+    reference_docx: "../Données/Modèle.docx"
+    keep_md: true
+    pandoc_args: ["--output=../Sorties"]
+
+---
+
+```{r setup, include=FALSE}
+
+# Réglages globaux pour le document
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE,
+                      comment = NA)
+library(flextable)
+library(dplyr)
+library(here)
+
+# Vérification du répertoire de travail
+
+```
+
+
+```{r page_garde_1}
+flextable(data.frame(Contenu = "REPUBLIQUE DU SENEGAL")) %>%
+  delete_part(part = "header") %>% 
+  border_remove() %>% 
+  # Application de la police
+  font(fontname = "Times New Roman", part = "all") %>% 
+  fontsize(size = 14, part = "all") %>% 
+  # Mise en forme du texte
+  bold(i = 1, j = 1) %>% 
+  align(align = "center") %>% 
+  set_table_properties(layout = "autofit", width = 1)
+```
+
+|                                                     |
+|:---------------------------------------------------:|
+| ![](../Données/LOGO3.jpeg){width="3cm" height="3cm"} |
+
+```{r page_garde_2}
+flextable(data.frame(Contenu = c( "**********",
+                                  "Un Peuple - Un But - Une Foi",
+                                  "**********",
+                                  "Agence nationale de la Statistique et de la démographie"))) %>% 
+  delete_part(part = "header") %>% 
+  border_remove() %>% 
+  # Application de la police
+  font(fontname = "Times New Roman", part = "all") %>% 
+  fontsize(size = 14, part = "all") %>% 
+  # Mise en forme du texte
+  bold(i = 1:4, j = 1) %>% 
+  italic(i = 2, j = 1) %>% 
+  align(align = "center") %>% 
+  set_table_properties(layout = "autofit", width = 1)
+```
+
+|                                          |
+|:----------------------------------------:|
+| ![](../Données/LOGO2.jpeg){width="3.5cm"} |
+
+```{r page_garde_3}
+flextable(data.frame(Contenu = c("**********",
+                                  "Ecole nationale de la Statistique et de l'Analyse économique Pierre Ndiaye"))) %>%
+  delete_part(part = "header") %>% 
+  border_remove() %>% 
+  # Application de la police
+  font(fontname = "Times New Roman", part = "all") %>% 
+  fontsize(size = 14, part = "all") %>% 
+  # Mise en forme du texte
+  bold(i = 1:2, j = 1) %>% 
+  align(align = "center") %>% 
+  set_table_properties(layout = "autofit", width = 1)
+```
+
+|                                                       |
+|:-----------------------------------------------------:|
+| ![](../Données/LOGO1.png){width="2.5cm" height="2cm"} |
+
+
+
+```{r page garde_4}
+flextable(data.frame(Contenu = "EVALUATION")) %>%
+  delete_part(part = "header") %>% 
+  border_remove() %>% 
+  font(fontname = "Times New Roman", part = "all") %>% 
+  fontsize(size = 20, part = "all") %>% 
+  bold(i = 1, j = 1) %>% 
+  color(color = "blue", part = "all") %>% 
+  align(align = "center", part = "all") %>% 
+  set_table_properties(layout = "autofit", width = 1)
+
+flextable(data.frame(Contenu = "Projet statistique avec R")) %>%
+  delete_part(part = "header") %>% 
+  border_remove() %>% 
+  font(fontname = "Times New Roman", part = "all") %>% 
+  fontsize(size = 16, part = "all") %>% 
+  italic(i = 1, j = 1) %>% 
+  align(align = "center", part = "all") %>% 
+  set_table_properties(layout = "autofit", width = 1)
+
+```
+
+$$
+$$
+
+```{r page_garde_5}
+donnees <- data.frame(
+  col1 = c("Rédigé par", "Samba DIENG", "Élève Ingénieur Statisticien économiste"),
+  col2 = c("Sous la supervision de", "M. Aboubacar HEMA", "Data scientist"),
+  stringsAsFactors = FALSE
+)
+flextable(donnees) %>% 
+  delete_part(part = "header") %>% 
+  width(j = 1:2, width = 0.5) %>%  # Répartition égale de la largeur
+  align(j = 1, align = "left") %>% 
+  align(j = 2, align = "right") %>% 
+  border_remove() %>% 
+  bold(i = 1, j = 1:2) %>% 
+  italic(i = 3, j = 1:2) %>% 
+  set_table_properties(layout = "autofit", width = 1) %>%  # Force la largeur totale
+  fontsize(size = 11)  # Ajuste la taille de police si nécessaire
+```
+
+|                                |
+|:------------------------------:|
+| **Année académique 2024-2025** |
+
+\newpage
+
+# Introduction
+
+texte texte texte texte texte texte texte texte texte*
