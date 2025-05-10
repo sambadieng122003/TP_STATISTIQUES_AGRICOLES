@@ -1,0 +1,26 @@
+{
+    "id": "0AC16305",
+    "path": "C:/Users/samba/Desktop/lab_fonctions/poverty_summary/R/transfers_summary.R",
+    "project_path": "R/transfers_summary.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1744658040761.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "171,1",
+        "scrollLine": "160"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1744678883,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1744726018096,
+    "read_only": false,
+    "read_only_alternatives": []
+}
